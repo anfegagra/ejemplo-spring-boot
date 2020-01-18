@@ -4,6 +4,7 @@ public class Usuario {
 
 	private String nombre;
 	private String apellido;
+	private String correo;
 
 	public String getNombre() {
 		return nombre;
@@ -19,5 +20,13 @@ public class Usuario {
 
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
 	}
 }
