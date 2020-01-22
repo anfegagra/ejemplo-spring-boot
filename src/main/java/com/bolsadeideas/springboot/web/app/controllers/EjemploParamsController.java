@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class EjemploParamsController {
 
 	@GetMapping("/string")
-	public String obtenerParametrosDeUrl(@RequestParam(name = "texto") String texto, Model model) {
+	public String obtenerParametrosDeUrl(
+		@RequestParam(name = "texto", required = false, defaultValue = "texto por defecto") String texto,
+		Model model) {
 		model.addAttribute("resultado", "El resultado es: " + texto);
 		return "params/ver";
 	}
