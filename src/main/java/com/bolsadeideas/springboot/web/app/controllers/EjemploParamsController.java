@@ -23,4 +23,11 @@ public class EjemploParamsController {
 		return "params/enviar";
 	}
 
+	@GetMapping("/varios-parametros")
+	public String obtenerParametrosDeUrl(@RequestParam String saludo, @RequestParam Integer numero,
+		Model model) {
+		model.addAttribute("resultado", "El saludo es '" + saludo + "'. El número es '" + numero + "'");
+		return "params/ver";
+	}
+
 }
