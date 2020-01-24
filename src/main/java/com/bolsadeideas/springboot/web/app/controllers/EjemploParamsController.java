@@ -1,5 +1,6 @@
 package com.bolsadeideas.springboot.web.app.controllers;
 
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,7 +27,22 @@ public class EjemploParamsController {
 	@GetMapping("/varios-parametros")
 	public String obtenerParametrosDeUrl(@RequestParam String saludo, @RequestParam Integer numero,
 		Model model) {
-		model.addAttribute("resultado", "El saludo es '" + saludo + "'. El número es '" + numero + "'");
+		model.addAttribute("resultado",
+			"El saludo es '" + saludo + "'. El número es '" + numero + "'");
+		return "params/ver";
+	}
+
+	@GetMapping("/varios-parametros-servlet")
+	public String obtenerParametrosDeUrl(HttpServletRequest request, Model model) {
+		String saludo = request.getParameter("saludo");
+		Integer numero;
+		try {
+			numero = Integer.parseInt(request.getParameter("numero"));
+		} catch (NumberFormatException e) {
+			numero = 0;
+		}
+		model.addAttribute("resultado",
+			"El saludo es '" + saludo + "'. El número es '" + numero + "'");
 		return "params/ver";
 	}
 
