@@ -12,7 +12,7 @@ public class EjemploPathVariableController {
 
 	@GetMapping("/")
 	public String index(Model model) {
-		model.addAttribute("titulo", "Enviar parámetros de la ruta @PathVariable");
+		model.addAttribute("titulo", "Enviar parámetros en la ruta (@PathVariable)");
 		return "variables/index";
 	}
 
@@ -26,6 +26,7 @@ public class EjemploPathVariableController {
 	@GetMapping("/path/{saludo}/{numero}")
 	public String obtenerVariablesDelPath(@PathVariable String saludo,
 		@PathVariable Integer numero, Model model) {
+		model.addAttribute("titulo", "Recibir variables del path con @PathVariable");
 		model.addAttribute("resultado",
 			"El saludo es: " + saludo + ". El número enviado es: " + numero);
 		return "variables/ver";
