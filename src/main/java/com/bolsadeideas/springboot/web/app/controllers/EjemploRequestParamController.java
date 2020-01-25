@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/params")
-public class EjemploParamsController {
+public class EjemploRequestParamController {
 
 	@GetMapping("/string")
 	public String obtenerParametrosDeUrl(
