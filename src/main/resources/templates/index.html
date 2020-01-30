@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title th:text="${titulo}"></title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
 </head>
 <body>
-<h1 th:text="${titulo}"></h1>
+<h1 class="color-naranja" th:text="${titulo}"></h1>
+<h2 class="color-verde">Decorando con estilos css recursos estáticos</h2>
+<img th:src="@{/images/spring-boot.png}"/>
 </body>
 </html>
